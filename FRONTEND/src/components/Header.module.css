@@ -1,0 +1,114 @@
+
+.logo {
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  font-weight: bold;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.ullist {
+  float: right;
+}
+
+.list {
+  display: inline-block;
+  line-height: 80px;
+}
+
+.list a {
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+a.active,
+a:hover {
+  background: #eeeeee;
+  transition: 0.5s;
+  color: black;
+}
+
+.checkbtn {
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 952px) {
+  .logo {
+    font-size: 30px;
+    padding-left: 50px;
+  }
+
+  .list a {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 858px) {
+  .checkbtn {
+    display: block;
+  }
+
+  .ullist {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+  }
+
+  .list {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+
+  .list a {
+    font-size: 20px;
+  }
+
+  a:hover,
+  a.active {
+    background: none;
+    color: #0082e6;
+  }
+
+  .ullist.show {
+    left: 0;
+  }
+}
+
+section {
+  background: url(bg1.jpg) no-repeat;
+  background-size: cover;
+  height: calc(100vh - 80px);
+}
+
+.menuitem{
+  padding: 0px;
+}
+.menuitem:hover{
+  background-color: transparent;
+}
+.icons:hover{
+  background-color: transparent;
+}
+.links{
+  margin-top: 10px;
+}
+.links:hover{
+  background-color: transparent;
+  color: wheat;
+}

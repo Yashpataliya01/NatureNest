@@ -1,0 +1,67 @@
+.firstdiv {
+  background-image: url("https://images.unsplash.com/photo-1545608444-f045a6db6133?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.firstdiv h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.firstdiv p {
+  font-size: 1.5rem;
+  width: 70%;
+  max-width: 800px;
+}
+
+.rewardHeader {
+  background-color: #f0f0f0;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.eachcard {
+  max-width: 300px;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.rewardImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.cardContent {
+  padding: 1rem;
+  text-align: center;
+}
+
+.cardContent h2 {
+  margin-bottom: 0.5rem;
+}
+
+.cardContent p {
+  color: #555555;
+}

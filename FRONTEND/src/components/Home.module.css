@@ -1,0 +1,425 @@
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+/* Main section styling */
+.mainsec {
+  width: 100%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2em 1em;
+}
+
+/* === removing default button style ===*/
+.planttree {
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  margin-top: 50px;
+}
+
+/* button styling */
+.planttree {
+  --border-right: 6px;
+  --text-stroke-color: rgba(255,255,255,0.6);
+  --animation-color: #37FF8B;
+  --fs-size: 2em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+  display: inline-block; /* Added this line */
+}
+
+/* this is the text, when you hover on button */
+.hovertext {
+  position: absolute;
+  box-sizing: border-box;
+  color: var(--animation-color);
+  width: 0;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: width 0.5s; /* Adjusted this line */
+  -webkit-text-stroke: 1px var(--animation-color);
+  white-space: nowrap; /* Added this line */
+}
+
+/* hover */
+.planttree:hover .hovertext {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color));
+}
+
+
+
+
+.mainsech1 {
+  color: white;
+  font-size: 3em;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.mainsech2 {
+  color: yellow;
+  text-align: center;
+}
+
+/* Hero section styling */
+.heroSection {
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1913&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: wheat;
+  overflow: hidden;
+  padding: 1em;
+}
+
+.heroTitle {
+  font-size: 10vw;
+  color: green;
+  margin: 0;
+  animation: fadeIn 2s ease-in-out;
+  font-weight: 900;
+}
+
+.heroText {
+  animation: slideUp 2s ease-in-out;
+  text-align: center;
+  max-width: 40%;
+  font-size: 2em;
+}
+
+/* Counter animation */
+.counter {
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Card container and card styles */
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1em;
+  width: 100%;
+  padding: 1em;
+}
+
+.card {
+  background-color: white;
+  color: black;
+  width: calc(50% - 1em);
+  max-width: 300px;
+  height: 330px;
+  border-radius: 8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  margin: 0.5em;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cardimg {
+  position: relative;
+  top: -20px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+}
+
+.cardImgs {
+  transition: all 0.5s;
+  height: 150px;
+  width: 90%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.projectinfo {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.projecttitle {
+  font-weight: 500;
+  font-size: 1.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: black;
+}
+
+.lighter {
+  font-size: 0.9em;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tag {
+  font-weight: lighter;
+  color: grey;
+}
+
+.cta {
+  position: relative;
+  margin: auto;
+  padding: 12px 18px;
+  transition: all 0.2s ease;
+  border: none;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+}
+
+.cta:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  width: 45px;
+  height: 45px;
+  transition: all 0.3s ease;
+}
+
+.cta span {
+  position: relative;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #234567;
+}
+
+.cta svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #234567;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover:before {
+  width: 60%;
+  background: #b1dae7;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active {
+  transform: scale(0.95);
+}
+
+.approchsec {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60vh;
+  background-color: black;
+  flex-direction: row;
+}
+
+.rightdiv {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+  padding: 1em;
+}
+
+.rightdiv h3 {
+  color: yellow;
+  font-size: x-large;
+}
+
+.rightdiv h1 {
+  font-size: 3em;
+  color: wheat;
+}
+
+.rightdiv h4 {
+  margin-top: 1em;
+  font-size: 1.5em;
+  width: 60%;
+}
+
+.leftdiv {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imgsection {
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 10px;
+}
+.imgh3{
+  color: yellow;
+}
+.imgh1{
+  color: white;
+  font-size: 5em;
+}
+
+.activework{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: #f0f0f0;
+  width: 100%;
+}
+.activework h1{
+  font-size: 4em;
+}
+
+.activework p{
+  font-size: 1.8em;
+  color: wheat;
+}
+
+@media (max-width: 768px) {
+  .mainsech1 {
+    font-size: 2em;
+  }
+
+  .heroText {
+    font-size: 1.5em;
+    max-width: 90%;
+  }
+
+  .heroTitle {
+    font-size: 15vw;
+  }
+
+  .card {
+    width: calc(50% - 1em);
+  }
+
+  .approchsec {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 110vh;
+    background-color: black;
+    flex-direction: column;
+  }
+  .imgsection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .imgsection h3{
+    font-size: 1em;
+  }
+  .activework{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+  }
+  .activework div h1{
+    font-size: 1em;
+  }
+  .activework div p{
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainsech1 {
+    font-size: 1.5em;
+  }
+
+  .heroText {
+    font-size: 1em;
+    max-width: 100%;
+  }
+
+  .heroTitle {
+    font-size: 20vw;
+  }
+
+  .card {
+    width: 100%;
+  }
+}
+
+/* Keyframe animations */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
