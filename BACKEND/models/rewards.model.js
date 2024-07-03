@@ -17,7 +17,7 @@ const RewardSchema = new mongoose.Schema({
   uniqueCode: {
     type: String,
     required: true,
-    unique: false,
+    unique: true,
   },
   expires: {
     type: Date,

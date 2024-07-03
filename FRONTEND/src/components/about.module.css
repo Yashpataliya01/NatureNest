@@ -14,6 +14,7 @@
   flex-direction: column;
   background-size: cover;
   background-position: center;
+  margin-top: 2rem;
 }
 
 .herotag h1{
@@ -255,14 +256,59 @@
 }
 
 @media (max-width: 858px) {
-  .herotag h2{
-    font-size: 1.5em;
-    width: 100%;
+  .herotag {
+    height: auto; /* Adjust height to fit content */
   }
-  .brands{
-    width: 100vw;
+  
+  .herotag h1 {
+    font-size: 2.5em; /* Decrease font size for h1 */
   }
-  .brands img{
-    width: 20%;
+  
+  .herotag h2 {
+    font-size: 1.5em; /* Decrease font size for h2 */
+    width: 90%; /* Adjust width for better readability */
+  }
+  
+  .brands {
+    flex-wrap: wrap; /* Allow images to wrap on smaller screens */
+    justify-content: center; /* Center align images */
+  }
+  
+  .brands img {
+    width: 30%; /* Resize images for smaller screens */
+    margin: 10px; /* Add margin between images */
+  }
+  
+  .imgsec {
+    flex-direction: column; /* Stack content vertically */
+    height: auto; /* Adjust height to fit content */
+  }
+  
+  .leftdiv h1 {
+    font-size: 2em; /* Decrease font size for h1 */
+  }
+  
+  .leftdiv h5 {
+    font-size: 1.2em; /* Decrease font size for h5 */
+  }
+  
+  .leftdiv p {
+    font-size: 1em; /* Adjust font size for paragraph */
+  }
+  
+  .rightdiv {
+    width: 100%; /* Full width for images */
+    border-radius: 0; /* Remove border-radius */
+    margin-top: 1em; /* Reduce top margin */
+  }
+  
+  .rightdiv img {
+    border-radius: 0; /* Ensure no border radius */
+  }
+  
+  .download {
+    margin-top: 2em; /* Adjust top margin */
+    width: 80%; /* Adjust button width */
   }
 }
+

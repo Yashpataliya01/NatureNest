@@ -9,11 +9,21 @@ function Home() {
   const [isAnimating, setIsAnimating] = useState(true);
   const { islogin, setislogin, rewardscount, setrewardscount } =
     useContext(AppContext);
+
+  function generateUniqueCode() {
+    const characters =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let code = "";
+    for (let i = 0; i < 8; i++) {
+      code += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return code;
+  }
   const [rewards, setRewards] = useState([
     {
       name: "Flat 60% OFF",
       details: "On TWS Earbuds, Nackband & Calling Smart Watch",
-      uniqueCode: "ERTYJK7412J7485NMN",
+      uniqueCode: "",
       expires: "21-July-2024",
       image:
         "https://images.gizbot.com/img/2021/12/amazon-mivi-days-sale-discount-offers-on-earbuds-headsets-1640235651.jpg",
@@ -21,7 +31,7 @@ function Home() {
     {
       name: "Hair Growth",
       details: "Buy 1 Get 1 FREE",
-      uniqueCode: "ERTYJK7412J7485NMN",
+      uniqueCode: "",
       expires: "01-Aug-2024",
       image:
         "https://5.imimg.com/data5/GLADMIN/Default/2023/7/322639948/YE/PV/AT/156947208/face-serum-with-hair-oil-combo-pack-offer-buy-one-get-one-free-500x500.jpg",
@@ -29,14 +39,14 @@ function Home() {
     {
       name: "90% OFF on Electronics",
       details: "Applicable on Laptops, Tablets, and Accessories",
-      uniqueCode: "HGFJHK1234UIJ7896",
+      uniqueCode: "",
       expires: "30-Dec-2024",
       image: "https://cdn.grabon.in/gograbon/images/merchant/1708321808953.jpg",
     },
     {
       name: "50% OFF on Furniture",
       details: "On selected Sofas, Beds, and Dining Sets",
-      uniqueCode: "QWERTY1234YUIOP678",
+      uniqueCode: "",
       expires: "10-Sep-2024",
       image:
         "https://www.storieshomes.com/media/weltpixel/owlcarouselslider/images/d/i/dinn-mob-f.jpg",
@@ -44,7 +54,7 @@ function Home() {
     {
       name: "Flat 30% OFF",
       details: "On All Groceries",
-      uniqueCode: "ZXCVBNM9876LKJH432",
+      uniqueCode: "",
       expires: "05-Oct-2024",
       image:
         "https://www.baapoffers.com/uploads/grofers-get-30-cashback-on-grocery.jpg",
@@ -52,13 +62,13 @@ function Home() {
     {
       name: "Exclusive Deal",
       details: "Flat 60% OFF on Premium Watches",
-      uniqueCode: "POIUYT4321MNBLK567",
+      uniqueCode: "",
       expires: "20-Nov-2024",
     },
     {
       name: "Special Offer",
       details: "Flat ₹500 Cashback on Flight Bookings",
-      uniqueCode: "LKJHGF9876VCXZ123",
+      uniqueCode: "",
       expires: "15-Jul-2024",
       image:
         "https://img.etimg.com/photo/msid-100711573,imgsize-791526/Upto60%25offonwatches.jpg",
@@ -66,14 +76,14 @@ function Home() {
     {
       name: "25% OFF",
       details: "On All Beauty Products",
-      uniqueCode: "MNBVCX4567LKJH678",
+      uniqueCode: "",
       expires: "30-Jun-2024",
       image: "https://pbs.twimg.com/media/C-J3y-fUQAAhh09.jpg",
     },
     {
       name: "Free Shipping",
       details: "On Orders Above ₹1000",
-      uniqueCode: "QAZXSW1234EDCVFR567",
+      uniqueCode: "",
       expires: "01-Jan-2025",
       image:
         "https://cdn.prod.website-files.com/5ef27cb65411b70949a151e9/5fa67b376084e378d68125bc_Free%20shipping%20(1).png",
@@ -81,7 +91,7 @@ function Home() {
     {
       name: "30% OFF",
       details: "On All Sports Gear",
-      uniqueCode: "PLKMJHGF5678XCVBNM",
+      uniqueCode: "",
       expires: "22-Aug-2024",
       image:
         "https://www.shutterstock.com/image-illustration/30-off-tag-sign30-design-260nw-2295858999.jpg",
@@ -89,7 +99,7 @@ function Home() {
     {
       name: "Free Gift",
       details: "With Every Purchase Above ₹1500",
-      uniqueCode: "QWERTY9876YUIOP123",
+      uniqueCode: "",
       expires: "05-Nov-2024",
       image:
         "https://t4.ftcdn.net/jpg/04/23/98/19/360_F_423981991_w1ZYf0ah4WWKe1R8BOxd3OgGDRPKEzp1.jpg",
@@ -97,7 +107,7 @@ function Home() {
     {
       name: "40% OFF on Books",
       details: "On All Bestsellers and New Releases",
-      uniqueCode: "ASDFGH1234JKL5678",
+      uniqueCode: "",
       expires: "28-Aug-2024",
       image:
         "https://bargainbookhutonline.com/public/storage/mobilebanner/hGskWDFvVjz8BE1YXbZAvZKOuw6ZkSe1JVP734E2.jpeg",
@@ -105,7 +115,7 @@ function Home() {
     {
       name: "Special Discount",
       details: "Flat 40% OFF on Kitchen Appliances",
-      uniqueCode: "HGFJHK1234UIJ7896",
+      uniqueCode: "",
       expires: "18-Oct-2024",
       image:
         "https://www.premierkitchen.in/wp-content/uploads/2022/10/mixer-grinder.jpg",
@@ -113,7 +123,7 @@ function Home() {
     {
       name: "Flat ₹1000 OFF",
       details: "On Orders Above ₹5000",
-      uniqueCode: "QAZXSW1234EDCVFR567",
+      uniqueCode: "",
       expires: "30-Sep-2024",
       image:
         "https://www.baapoffers.com/uploads/get-flat-rs-1000-off-on-bill-value-of-rs-3890-and-above-at-ajio.jpg",
@@ -121,7 +131,7 @@ function Home() {
     {
       name: "Flat 80% OFF",
       details: "On Selected Fashion Items",
-      uniqueCode: "PLKMJHGF5678XCVBNM",
+      uniqueCode: "",
       expires: "12-Dec-2024",
       image:
         "https://m.economictimes.com/thumb/height-450,width-600,imgsize-323182,msid-101778071/amazon-prime-day-sale.jpg",
@@ -129,7 +139,7 @@ function Home() {
     {
       name: "Exclusive Offer",
       details: "Free Movie Tickets with Orders Above ₹2500",
-      uniqueCode: "OIUYTREW4567ASDFG8",
+      uniqueCode: "",
       expires: "15-Aug-2024",
       image:
         "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202302/flipi-sixteen_nine.jpg?VersionId=TAKw0THMhlLk0rh0kPPp9kb98i4vV1Pq",
@@ -137,14 +147,14 @@ function Home() {
     {
       name: "50% OFF on Travel Accessories",
       details: "On All Backpacks, Suitcases, and More",
-      uniqueCode: "LKJHGF9876VCXZ123",
+      uniqueCode: "",
       expires: "05-Sep-2024",
       image: "https://drillthedeal.com/IMAGE/TA_Hero_BAU_PC_1_51.jpg",
     },
     {
       name: "25% OFF",
       details: "On All Fitness Equipment",
-      uniqueCode: "MNBVCX4567LKJH678",
+      uniqueCode: "",
       expires: "30-Jul-2024",
       image:
         "https://divinenutrition.in/cdn/shop/files/DN-Web-Banner-2800x1200.jpg?v=1717588372",
@@ -152,7 +162,7 @@ function Home() {
     {
       name: "Special Price",
       details: "₹200 OFF on Your Next Order",
-      uniqueCode: "QWERTY1234YUIOP678",
+      uniqueCode: "",
       expires: "01-Oct-2024",
       image:
         "https://www.dealnloot.com/wp-content/uploads/2016/03/Pepperfry-Rs-200-off-on-Rs-1000-or-more-All-users-300x249.gif",
@@ -162,7 +172,10 @@ function Home() {
   const plantTre = async (e) => {
     e.preventDefault();
     const randomIndex = Math.floor(Math.random() * rewards.length);
-    const newreward = rewards[randomIndex];
+    const newreward = {
+      ...rewards[randomIndex],
+      uniqueCode: generateUniqueCode(),
+    };
 
     try {
       const res = await fetch("api/post/create", {
@@ -344,7 +357,7 @@ function Home() {
         </div>
         <div className={styles.imgsection}>
           <h3 className={styles.imgh3}>
-            TREES PLANTED BY THE ECOSIA COMMUNITY
+            TREES PLANTED BY THE NATURENEST COMMUNITY
           </h3>
           <h1 className={styles.imgh1}>{count}</h1>
           <img
@@ -354,7 +367,7 @@ function Home() {
           <div className={styles.activework}>
             <div>
               <h1>20 million</h1>
-              <p>people using Plant Future</p>
+              <p>people using NatureNest</p>
             </div>
             <div>
               <h1>60+</h1>

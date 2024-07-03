@@ -15,6 +15,7 @@ function Myrewards() {
         throw new Error(`Server error: ${res.status}`);
       }
       const data = await res.json();
+      console.log("data", data);
       setUserReward(data.rewards || []);
     } catch (error) {
       console.error("Failed to fetch data:", error);

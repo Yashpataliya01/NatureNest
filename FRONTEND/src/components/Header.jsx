@@ -45,6 +45,10 @@ function Header() {
     }
   };
 
+  const clearreward = () => {
+    setrewardscount(0);
+  };
+
   return (
     <nav
       style={{
@@ -57,7 +61,7 @@ function Header() {
       }}
     >
       <label className={Styles.logo}>
-        Plant <span style={{ color: "green", fontSize: "1.5em" }}>Future</span>
+        Nature <span style={{ color: "green", fontSize: "1.5em" }}>NEST</span>
       </label>
       <div className={Styles.checkbtn} onClick={toggleMenu}>
         <i className="fas fa-bars"></i>
@@ -91,7 +95,11 @@ function Header() {
                   marginLeft: "-30px",
                 }}
               >
-                <Link to="/myrewards" className={Styles.links}>
+                <Link
+                  to="/myrewards"
+                  className={Styles.links}
+                  onClick={clearreward}
+                >
                   <MenuItem className={Styles.menuitem}>
                     <IconButton
                       className={Styles.icons}
